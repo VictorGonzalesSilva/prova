@@ -18,16 +18,19 @@ router.get('/todos', (req, res) => {
 router.put('/todos/:id', (req, res) => {
   // atualizar um todo
   const id = req.params.id;
-  const todo = req.body;
-  connection.query('UPDATE todos SET ? WHERE id = ?', [todo, id], (err, results) => {
+   const { task, owner, status } = req.body;
+  connection.query('UPDATE todos SET task = $1, owner = $2, status = $3 WHERE todos_id = $4', [task, owner, status, id], (err, results) => {  
     if (err) {
       return res.status(400).json({
-        error: err
+        error: 'erro ao criar',
+        message: 'erro',
       });
+    } else {
+      res.json(results.rows);
     }
-    res.send('Atualizar um todo');
   });
 });
+
 router.post('/todos', (req, res) => {
   // criar um todo
   const {task, owner, status} = req.body;

@@ -18,8 +18,4 @@ app.use(router);
 
 // lembrar de exportar a variável app para ser usada no index.js
 module.exports = app;
-require('dotenv').config();
-// criar uma variável e adicionar a ela o arquivo app.js
-const app = require('./src/app');
-// criar app.listen(porta)
-app.listen(process.env.PORT);
+
