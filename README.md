@@ -13,7 +13,7 @@ cd examination
 3. Renomeie o arquivo `.example.env` para `.env`
 4. Completar o código onde tem comentários
 5. Inicie o servidor `yarn start`
-6. Crie as rodas no insomnia para os testes
+6. Crie as rotas no insomnia para os testes
 7. Crie um repository no github e envie o projeto
 8. O resultado final vai ser uma api para criação de todos
 
